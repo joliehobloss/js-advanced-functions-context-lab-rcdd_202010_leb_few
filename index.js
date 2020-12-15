@@ -18,19 +18,21 @@ return arr;
   }
   
 function createTimeInEvent(time){
+  let a=time.split(" ");
   let object={};
     object.type="TimeIn";
-    object.hour=parseInt(time.substring(11));
-    object.date=time.substring(0,10);
+    object.hour=parseInt(a[1]);
+    object.date=a[0];
   this.timeInEvents.push(object);
   return this;
 }
 
 function createTimeOutEvent(time){
+  let a=time.split(" ");
     let object={};
     object.type="TimeOut";
-    object.hour=parseInt(time.substring(11));
-    object.date=time.substring(0,10);
+    object.hour=parseInt(a[1]);
+    object.date=a[0];
   this.timeOutEvents.push(object);
   return this;
 }
